@@ -86,6 +86,18 @@ bool callinfo::runOnModule(Module &M)
 	if ( I->getName() == "main" )
 	{
 	    //add every function into main function
+	    for ( Module::iterator II =  M.begin(), EE = M.end(); II != EE; II++ )
+	    {
+		//check vectot
+		for ( std::vector<std::string > V = mainFuncName.begin(), Z = mainFuncName.end(); V != Z; V++)
+		{
+		    if ( II->getName() == (*V) )
+		    {
+			// add to function main
+
+		    }
+		}
+	    }
 	}
     }
     
