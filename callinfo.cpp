@@ -94,6 +94,21 @@ bool callinfo::runOnModule(Module &M)
 		    if ( II->getName() == (*V) )
 		    {
 			// add to function main
+			// analysis function main(I) to get every basic block ,if the block has called the function then add succ_iterator(bb)
+			
+			// get entry block of function II
+			const BasicBlock *B = II->getEntryBlock();
+
+
+			for ( BasicBlock::iterator BB = I.begin(), BE = I.end(); BB != BE; BB++)
+			{
+				// at last we need it here:succ_iterator(BB) = B;
+			    if (  IN = BB.begin(), IE = BB.end(); IN != IE ; IN++ )
+			    {
+				if( Instruction::iterator IB = IN.begin(), ID = IN.end() ; IB != IN ; IB++ )	
+				    
+			    }
+			}
 
 		    }
 		}
